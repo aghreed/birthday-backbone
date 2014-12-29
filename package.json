@@ -1,0 +1,10 @@
+{
+  "name": "A_Backbone_Birthday",
+  "version": "0.0.1",
+  "description": "Birthday Month Selection and Organization Backbone App",
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-less": "~2.0.1",
+    "httpster": "~1.0.0"
+  }
+}

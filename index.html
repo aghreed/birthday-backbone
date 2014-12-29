@@ -1,0 +1,40 @@
+<!-- Example Backbone Birthday Month App -->
+<html lang='en' data-framework='backbonejs'>
+<head>
+  <!-- styles -->
+  <link rel='stylesheet' href='./bower_components/semantic-ui/dist/semantic.css'/>
+  <link rel='stylesheet' href='./style/style.css'/>
+</head>
+<body>
+<div id='main'>
+</div>
+
+<!-- templates -->
+<script type='text/template' id='calendar-template'>
+  <div class='ui four cards segment calendar'></div>
+</script>
+<script type='text/template' id='month-template'>
+  <div class='card month'>
+    <div class='content'>
+      <div class='right floated number'> <i class='circle icon'> <% number %> </i></div>
+      <div class='header name'> <% name %> </div>
+    </div>
+  </div>
+</script>
+<!-- library scripts -->
+<script src='./bower_components/jquery/dist/jquery.js'></script>
+<script src='./bower_components/lodash/dist/lodash.js'></script>
+<script src='./bower_components/backbone/backbone.js'></script>
+<script src='./bower_components/semantic-ui/dist/semantic.js'></script>
+
+<!-- app scripts -->
+<script src='./js/birthday.month.api.js'></script>
+<script src='./js/month.model.js'></script>
+<script src='./js/year.collection.js'></script>
+<script src='./js/month.view.js'></script>
+<script src='./js/calendar.view.js'></script>
+<script src='./js/app.view.js'></script>
+<script src='./js/app.router.js'></script>
+<script src='app.js'></script>
+</body>
+</html>
