@@ -1,15 +1,71 @@
 // Variables
 @background: #3763fd;
-@cardsBackground: tint(@background, 80%);
+@monthBackground: tint(@birthday, 60%);
+@birthdayBackground: tint(@birthday, 80%);
+@birthday: #bd032d;
 
 #main {
+  position: absolute;
   width: 100%;
   height: 100%;
   background-color: @background;
-}
 
-.cards {
-  width: 80%;
-  height: 80%;
-  background-color: @cardsBackground;
+  .calendar {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 3em;
+    width: 80%;
+    height: 80%;
+
+    .month {
+      min-height: 160px;
+      transition: background-color 300ms;
+
+      .backdrop {
+        visibility: hidden;
+        transition: visibility 500ms;
+
+        .icon.gift {
+          position: absolute;
+          top: 0.65em;
+          font-size: 7em;
+          color: @birthday;
+        }
+      }
+
+      &.birthday {
+        background-color: @birthdayBackground;
+
+        .backdrop {
+          visibility: visible;
+        }
+
+        .action {
+          visibility: hidden;
+        }
+      }
+
+      .action {
+        margin-top: 2.25em;
+        opacity: 0;
+
+        .button {
+          text-align: center;
+        }
+
+        .icon.gift {
+          margin-left: 1em;
+          color: @birthday;
+        }
+      }
+
+      &:hover {
+        background-color: @monthBackground;
+
+        .action {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }

@@ -7,7 +7,7 @@ var app = app || {};
     el: '#main',
 
     events: {
-      //'click .filter' : 'handleFilter'
+      'click .filter' : 'handleFilter'
     },
 
     initialize: function () {
@@ -15,7 +15,12 @@ var app = app || {};
     },
 
     render: function () {
-      console.log('render function hit');
+      var view = this,
+          calendarView = new app.CalendarView({model: app.year});
+
+      view.$el.append(calendarView.render().el);
+
+      return view;
     }
 
   });

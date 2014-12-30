@@ -5,13 +5,13 @@ var app = app || {};
   var AppRouter = Backbone.Router.extend({
 
     routes: {
-
+      // no routes needed
     }
 
   });
 
   app.appRouter = new AppRouter();
 
-  Backbone.history.start({silent: true});
+  Backbone.history.start();
 
 })();

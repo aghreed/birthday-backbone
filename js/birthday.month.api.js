@@ -1,6 +1,10 @@
-var birthdayMonthApi = (function () {
+var BirthdayMonthApi = (function () {
 
-  this.currentBirthdayMonth;
+  // default birthday month
+  this.currentBirthdayMonth = {
+    name: 'January',
+    number: 1
+  };
 
   function getMonth() {
     return this.currentBirthdayMonth;
@@ -8,7 +12,7 @@ var birthdayMonthApi = (function () {
 
   function setMonth(month) {
     this.currentBirthdayMonth = month;
-    console.log('Newly selected birthday month is: ' + this.currentBirthdayMonth.name);
+    console.log('Birthday month is set to: ' + month.name);
   };
 
   return {

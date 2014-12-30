@@ -6,12 +6,8 @@ var app = app || {};
 
     defaults: {
       name: '',
-      number: 0
-    },
-
-    useAsBirthdayMonth: function () {
-      // hit api and send 'this' to it
-      console.log('Need to set ' + this.name + 'as birthday month');
+      number: null,
+      isBirthday: false
     }
 
   });

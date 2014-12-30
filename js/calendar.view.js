@@ -4,20 +4,25 @@ var app = app || {};
 
   app.CalendarView = Backbone.View.extend({
 
+    className: 'calendar',
+
     template: _.template($('#calendar-template').html()),
 
-    events: {
-
-    },
-
     initialize: function () {
-      this.listenTo(this.model, 'change', this.render);
+      this.listenTo(this.model, 'filter', this.render);
     },
 
     render: function () {
-      var view = this;
+      var view = this,
+          calendar;
 
-      view.$el.html(view.template(this.model.toJSON()));
+      view.$el.html(view.template());
+
+      calendar = $('.cards', view.$el);
+
+      _.each(view.model.models, function (month) {
+        calendar.append(new app.MonthView({model: month}).render().el);
+      });
 
       return view;
     }
