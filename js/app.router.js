@@ -5,7 +5,7 @@ var app = app || {};
   var AppRouter = Backbone.Router.extend({
 
     routes: {
-      // no routes needed
+      // no routes needed thus far
     }
 
   });

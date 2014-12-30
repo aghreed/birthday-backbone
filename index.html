@@ -8,10 +8,17 @@
 
 </head>
 <body>
-  <h2 class='ui header'>Backbone Birthday App</h2>
-  <div class='right floated actions'></div>
 
-  <div id='main'></div>
+  <div id='main'>
+    <div class='ui menu'>
+      <div class='item header title'>Birthday Backbone Example App</div>
+      <div class='ui text menu filters'>
+        <div class='header item'>Sort By</div>
+        <a class='sort item active' data-name='number'><i class='icon sort numeric ascending'></i>Numerical</a>
+        <a class='sort item' data-name='name'><i class='icon sort alphabet ascending'></i>Alphabetical</a>
+      </div>
+    <div>
+  </div>
 
 <!-- templates -->
 <script type='text/template' id='calendar-template'>

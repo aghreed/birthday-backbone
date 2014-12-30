@@ -1,5 +1,5 @@
 // Variables
-@background: #3763fd;
+@background: #5f82fd;
 @monthBackground: tint(@birthday, 60%);
 @birthdayBackground: tint(@birthday, 80%);
 @birthday: #bd032d;
@@ -10,60 +10,73 @@
   height: 100%;
   background-color: @background;
 
+  .menu {
+    .title {
+      color: @birthday;
+    }
+
+    .filters {
+      margin-left: 2em;
+    }
+  }
+
   .calendar {
-    position: relative;
-    margin: 0 auto;
-    margin-top: 3em;
-    width: 80%;
-    height: 80%;
 
-    .month {
-      min-height: 160px;
-      transition: background-color 300ms;
+    .cards {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 3em;
+      width: 80%;
+      height: 80%;
 
-      .backdrop {
-        visibility: hidden;
-        transition: visibility 500ms;
-
-        .icon.gift {
-          position: absolute;
-          top: 0.65em;
-          font-size: 7em;
-          color: @birthday;
-        }
-      }
-
-      &.birthday {
-        background-color: @birthdayBackground;
+      .month {
+        min-height: 160px;
+        transition: background-color 300ms;
 
         .backdrop {
-          visibility: visible;
-        }
-
-        .action {
           visibility: hidden;
+          transition: visibility 500ms;
+
+          .icon.gift {
+            position: absolute;
+            top: 0.65em;
+            font-size: 7em;
+            color: @birthday;
+          }
         }
-      }
 
-      .action {
-        margin-top: 2.25em;
-        opacity: 0;
+        &.birthday {
+          background-color: @birthdayBackground;
 
-        .button {
-          text-align: center;
+          .backdrop {
+            visibility: visible;
+          }
+
+          .action {
+            visibility: hidden;
+          }
         }
-
-        .icon.gift {
-          margin-left: 1em;
-          color: @birthday;
-        }
-      }
-
-      &:hover {
-        background-color: @monthBackground;
 
         .action {
-          opacity: 1;
+          margin-top: 2.25em;
+          opacity: 0;
+
+          .button {
+            text-align: center;
+          }
+
+          .icon.gift {
+            margin-left: 1em;
+            color: @birthday;
+          }
+        }
+
+        &:hover {
+          background-color: @monthBackground;
+
+          .action {
+            opacity: 1;
+          }
         }
       }
     }

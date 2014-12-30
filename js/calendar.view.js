@@ -9,20 +9,34 @@ var app = app || {};
     template: _.template($('#calendar-template').html()),
 
     initialize: function () {
-      this.listenTo(this.model, 'filter', this.render);
+      this.listenTo(app.year, 'sortMonths', this.sortMonths);
     },
 
-    render: function () {
+    render: function (months) {
       var view = this,
-          calendar;
+          calendar = months || view.model.models,
+          calendarEl;
 
       view.$el.html(view.template());
 
-      calendar = $('.cards', view.$el);
+      calendarEl = $('.cards', view.$el),
 
-      _.each(view.model.models, function (month) {
-        calendar.append(new app.MonthView({model: month}).render().el);
+      _.each(calendar, function (month) {
+        calendarEl.append(new app.MonthView({model: month}).render().el);
       });
+
+      return view;
+    },
+
+    sortMonths: function (sort) {
+      var view = this,
+          sorted;
+
+      sorted = view.model.sortBy(function (month) {
+        return month.get(sort);
+      });
+
+      view.render(sorted);
 
       return view;
     }
