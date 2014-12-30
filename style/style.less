@@ -1,8 +1,9 @@
 // Variables
 @background: #5f82fd;
-@monthBackground: tint(@birthday, 60%);
-@birthdayBackground: tint(@birthday, 80%);
 @birthday: #bd032d;
+@monthBackground: #6c93be;
+@monthHoverBackground: tint(@birthday, 60%);
+@birthdayBackground: tint(@birthday, 80%);
 
 #main {
   position: absolute;
@@ -31,6 +32,7 @@
 
       .month {
         min-height: 160px;
+        background-color: @monthBackground;
         transition: background-color 300ms;
 
         .backdrop {
@@ -72,7 +74,7 @@
         }
 
         &:hover {
-          background-color: @monthBackground;
+          background-color: @monthHoverBackground;
 
           .action {
             opacity: 1;
