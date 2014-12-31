@@ -3,7 +3,8 @@ var BirthdayMonthApi = (function () {
   // default birthday month
   this.currentBirthdayMonth = {
     name: 'January',
-    number: 1
+    number: 1,
+    isBirthday: true
   };
 
   function getMonth() {
