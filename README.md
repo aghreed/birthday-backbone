@@ -6,13 +6,17 @@ Birthday Month Selection and Organization Backbone App
 
 __To Run:__
 
-Open directory of project in terminal, and run:
+Assuming you have node, npm, and bower installed, open directory of project in terminal, and run:
 
 `npm install`
 
 `bower install`
 
+`npm install gulp -g`
+
 `gulp less`
+
+`npm install httpster -g`
 
 `httpster`
 
